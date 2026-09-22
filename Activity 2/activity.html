@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2- HTML Activity</title> 
+    <style>
+        .resized-img {
+            width: 300px;
+            height: auto;
+        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        section { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        blockquote { border-left: 4px solid #ccc; margin-left: 0; padding-left: 15px; font-style: italic; }
+    </style>
+    
+</head>
+<body>
+    <section id="images-section">
+    <h2>Images </h2>
+
+    <!--Image 1 -->
+    <img src="images/switzerland.jpg" alt="swiss scenery">
+    
+    <!--Image 2 -->
+     <figure>
+            <img src="images/cinnamoroll.jpg" alt="cinnamoroll character" class="resized-img">
+            <figcaption>This is cinnamoroll, my favorite sanrio character :)</figcaption>
+        </figure>
+
+    <!--Image 3 -->
+    <img src="images/tulip.jpg" alt="A bouquet of pink tulips tied with a pink ribbon in a clear glass vase.">
+    </section>
+    
+    <!--HyperLinks-->
+    <section id="hyperlinks-section">
+        <h2>Hyperlinks</h2>
+        <ul>
+            <!--Internal Link-->
+            <li><strong>Internal Link:</strong> Go to <a href="dom-tree.png">DOM screenshot image</a>.</li>
+            
+            <!-- External Link -->
+            <li><strong>External Link:</strong> Visit my <a href="https://www.facebook.com/leanaurr.3" target="_blank">Facebook Profile</a>.</li>
+            
+            <!-- Email Link -->
+            <li><strong>Email Link:</strong> Contact me at <a href="mailto:eleanore.barata@carsu.edu.ph">eleanore.barata@carsu.edu.ph</a>.</li>
+            
+            <!-- Same-page Anchor Link -->
+            <li><strong>Same-page Anchor Link:</strong> Jump back to <a href="#images-section">Images</a>.</li>
+            
+        </ul>
+    </section>
+
+    <!--Multimedia-->
+    <section id="multimedia-section">
+        <h2>Multimedia</h2>
+        <!-- Audio Element -->
+        <h3>Audio Sample</h3>
+        <audio controls>
+            <source src="media/oiia-oiia-sound.mp3" type="audio/mpeg">
+             Your browser does not support the audio element.
+        </audio>
+
+        <!-- Video Element -->
+        <h3>Video Sample</h3>
+        <video controls width="100%">
+            <source src="media/spinning-cat-oiiiai.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+        
+    </section>
+    
+    <section id="useful-tags-section">
+    <!--Useful Tags -->
+    <h2>Useful Tags</h2>
+
+    <!-- I chose the <abbr> tag to provide a tooltip explanation for an abbreviation. -->
+    <p>This activity focuses on <abbr title="HyperText Markup Language">HTML</abbr> fundamentals.</p>
+
+     <!-- I chose the <mark> tag to highlight important text for emphasis. -->
+    <p>My name is <mark>Eleanore Barata</mark>.</p>
+
+    <!-- I chose the <blockquote> tag to display a quote in a visually distinct manner. -->
+    <p>This is a quote i like: </p>
+     <blockquote>
+            "The best way to predict the future is to invent it." - Alan Kay
+        </blockquote>
+   </section>
+
+    <section id="dom-section">
+        <h2>HTML DOM</h2>
+         <p>Below is a screenshot of the browser DevTools Elements panel showing the DOM tree:</p>
+
+         <img src="dom-tree.png" alt="Screenshot of the browser DevTools Elements panel showing the DOM tree." style="max-width: 100%; border: 1px solid #ccc;">
+    </section>
+
+         <!-- 
+    When I inspected my page using the browser's DevTools, I observed that the <body> element serves as the root parent for all the visible content. In my Images section, I saw that the <section id="images-section"> is a child of the body, and it acts as the parent to the <figure> element. Inside that figure, I noticed that my <img> and <figcaption> tags are siblings, both nested as children of the figure. Similarly, in my Hyperlinks section, I found that my <ul> element is the parent to several <li> list items, which in turn contain the <a> anchor tags as their children. This helped me understand how the DOM tree organizes my content into a clear hierarchical structure.
+    -->
+    
+</body>
+</html>
