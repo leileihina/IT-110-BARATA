@@ -1,0 +1,179 @@
+/* PART A: CSS FUNDAMENTALS */
+
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body base styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #eff6ff;
+}
+
+/* Header and footer layout */
+header, footer {
+    background-color: rgb(15, 23, 42);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Grouping selector for headings */
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Cascade demonstration:
+   Both "h1" and "header h1" target the h1 element.
+   "header h1" wins because it has higher specificity
+   (it adds a type selector for the parent header). */
+h1 {
+    color: white;
+}
+
+header h1 {
+    color: #93c5fd;
+}
+
+/* PART B: SELECTORS, PROPERTIES, AND VALUES */
+
+/* Navigation links (type + pseudo-class) */
+nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    background-color: white;
+    color: #1e3a8a;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #93c5fd;
+    color: black;
+}
+
+/* Card component (class selector) */
+.card {
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
+    border: 2px solid #bfdbfe;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    margin: 30px auto 20px;
+    background-color: white;
+}
+/* Box model calculation:
+   With box-sizing: border-box, the .card total
+   rendered width is exactly 500px.
+   That 500px INCLUDES padding (20px left + 20px
+   right = 40px) and borders (2px left + 2px
+   right = 4px). So the content width is:
+   500 - 40 - 4 = 456px. */
+
+/* About card (ID selector + positioning) */
+#about {
+    position: relative;
+    border-color: #1e40af;
+    background-color: #dbeafe;
+}
+
+#about::after {
+    content: "PROFILE";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #1e40af;
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+/* Descendant selector */
+.card p {
+    margin-bottom: 10px;
+}
+
+/* Class selector + pseudo-element */
+.intro {
+    color: #1e40af;
+    font-weight: bold;
+}
+
+.intro::first-letter {
+    font-size: 1.5rem;
+    color: #f59e0b;
+}
+
+/* PART C: BOX MODEL AND BASIC LAYOUT */
+
+/* Skills list (flexbox + child selector) */
+.skills-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.skills-list > li {
+    background-color: #1e40af;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* PART D: DISPLAY AND VISIBILITY */
+
+/* display: none removes the element AND its space. */
+.hide-none {
+    display: none;
+}
+
+/* visibility: hidden hides the element BUT keeps its space. */
+.hide-visibility {
+    visibility: hidden;
+}
+
+/* Visible difference:
+   .hide-none leaves NO gap on the page.
+   .hide-visibility leaves an empty gap where it would be. */
+
+.scroll-box {
+    height: 180px;
+    overflow: auto;
+    background-color: #f8fafc;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+/* REFLECTION QUESTIONS
+
+1. Why did one of your two conflicting rules win?
+   The "header h1" rule won over "h1" because it is
+   more specific. It targets the h1 element only
+   when it sits inside a header, which gives it a
+   higher specificity score than the plain h1 rule.
+
+2. Rendered width of .card with box-sizing: content-box?
+   If box-sizing were content-box, the 500px would
+   apply only to the content. The total width would
+   be 500px + 40px padding + 4px border = 544px.
+
+3. When would you choose visibility: hidden instead of display: none?
+   I would use visibility: hidden when I want to
+   hide an element but keep its space in the layout
+   so nothing else shifts. display: none removes
+   the element and collapses its space entirely.
+   */
